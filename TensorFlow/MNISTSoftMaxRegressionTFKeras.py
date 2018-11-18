@@ -25,5 +25,5 @@ start = time.time()
 model.fit(x_train, y_train, epochs=5)
 stop = time.time()
 
-print("Training time: " + stop-start)
+print("Training time: " + str(stop-start))
 model.evaluate(x_test, y_test)
