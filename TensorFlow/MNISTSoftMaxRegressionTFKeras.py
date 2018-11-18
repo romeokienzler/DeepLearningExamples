@@ -1,5 +1,6 @@
 #Example taken from https://www.tensorflow.org/tutorials/
 
+import time
 import tensorflow as tf
 mnist = tf.keras.datasets.mnist
 
@@ -18,5 +19,11 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
+
+
+start = time.time()
 model.fit(x_train, y_train, epochs=5)
+stop = time.time()
+
+print("Training time: " + stop-start)
 model.evaluate(x_test, y_test)
